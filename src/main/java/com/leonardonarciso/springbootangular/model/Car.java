@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import lombok.NonNull;
 
 @Entity
 public class Car {
@@ -13,7 +12,6 @@ public class Car {
 	@GeneratedValue
 	private Long id;
 
-	@NonNull
 	private String name;
 
 	public Long getId() {

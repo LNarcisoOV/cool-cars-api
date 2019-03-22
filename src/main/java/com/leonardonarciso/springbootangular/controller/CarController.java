@@ -4,19 +4,21 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.leonardonarciso.springbootangular.impl.CarRepository;
 import com.leonardonarciso.springbootangular.model.Car;
 
-@RestController("/car")
+@RestController
+@RequestMapping("/car")
 public class CarController {
 
 	@Autowired
 	private CarRepository carRepository;
 
-	@RequestMapping("/list")
+	@GetMapping("/list")
 	public Collection<Car> listOfCars(){
 		return carRepository.findAll().stream().filter(this::isCool).collect(Collectors.toList());
 	}
