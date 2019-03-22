@@ -24,7 +24,7 @@ public class CarController {
 	}
 
 	private boolean isCool(Car car) {
-		return !car.getName().equals("AMC Gremlin") && !car.getName().equals("Triumph Stag")
-				&& !car.getName().equals("Ford Pinto") && !car.getName().equals("Yugo GV");
+		return !car.getName().equalsIgnoreCase("AMC Gremlin") && !car.getName().equalsIgnoreCase("Triumph Stag")
+				&& !car.getName().equalsIgnoreCase("Ford Pinto") && !car.getName().equalsIgnoreCase("Yugo GV");
 	}
 }
